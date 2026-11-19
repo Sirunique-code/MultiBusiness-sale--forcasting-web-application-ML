@@ -1,0 +1,386 @@
+[0] Normal | ABUBAKAR TAFAWA BALEWA UNIVERSITY BAUCHI, BAUCHI STATE, NIGERIA
+[1] Normal | 
+[2] Normal | REVOLUTIONIZING BUSINESS MANAGEMENT: AN INNOVATIVE BUSINESS SALES PERFORMANCE PREDICTION USING DATA VISUALIZATION
+[3] Normal | (A Case Study of Abubakar Tafawa Balewa University, Bauchi)
+[4] Normal | BY THADDEAUS SAMUEL OJONUGWA
+[5] Normal | 20/55821U/1
+[6] Normal | SUBMITTED TO THE DEPARTMENT OF COMPUTER SCIENCE, FACULTY OF COMPUTING.
+[7] Normal | SUPERVISED BY: DR. ISMAIL ZAHARADDEN YAKUBU
+[8] Normal | IN PARTIAL FULFILMENT OF THE REQUIREMENTS FOR THE AWARD OF BACHELOR OF TECHNOLOGY (B.Tech.) DEGREE IN COMPUTER SCIENCE.
+[9] Normal | 2026
+[10] Normal | 
+[11] Normal | DECLARATION
+[12] Normal | I hereby declared that this work is the product of my research effort, undertaken under the supervision of Dr. Ismail Zaharaddeen Yakubu. and has not been presented and will not be presented elsewhere for the award of any degree or certificate. All sources have been acknowledged.
+[13] Normal | 
+[14] Normal | 
+[15] Normal | _______________________						_________________________
+[16] Normal | THADDEAUS SAMUEL OJONUGWA 						DATE
+[17] Normal | STUDENT
+[18] Heading 1 | CERTIFICATION
+[19] Body Text | This is to certify that the project entitled REVOLUTIONIZING BUSINESS MANAGEMENT: AN INNOVATIVE BUSINESS SALES PERFORMANCE PREDICTION USING DATA VISUALIZATION by SAMUEL THADDEAUS OJONUGWA was carried out under my supervisor:
+[20] Body Text | 
+[21] Body Text | 
+[22] Body Text | 
+[23] Body Text | 
+[24] Body Text | 
+[25] Body Text | 
+[26] Normal | _______________________						_________________________
+[27] Body Text | Dr. Ismail Zaharaddeen Yakubu						DATE
+[28] Normal | SUPERVISOR
+[29] Body Text | 
+[30] Body Text | 
+[31] Body Text | 
+[32] Body Text | 
+[33] Body Text | 
+[34] Body Text | 
+[35] Body Text | 
+[36] Body Text | 
+[37] Body Text | 
+[38] Normal | _______________________						_________________________
+[39] Body Text | Prof. Fatima Zambuk								DATE
+[40] Normal | Head of Department
+[41] Body Text | 
+[42] Body Text | 
+[43] Body Text | 
+[44] Body Text | 
+[45] Body Text | 
+[46] Body Text | 
+[47] Body Text | 
+[48] Body Text | 
+[49] Body Text | 
+[50] Normal | _______________________						_________________________
+[51] Body Text | Prof. Abdulsalam Gital							DATE
+[52] Normal | Dean, Faculty of Computing
+[53] Body Text | 
+[54] Body Text | 
+[55] Normal | 
+[56] Heading 1 | ACKNOWLEDGEMENT
+[57] Body Text | I am deeply grateful to God Almighty for granting me the grace, strength, and sound mind to complete this project successfully.
+[58] Body Text | My sincere appreciation goes to my supervisor, Dr. Ismail Zaharaddeen Yakubu, for his patient guidance, constructive criticism, and invaluable insight throughout the course of this research. His willingness to review my work and offer directions at every stage made this project possible.
+[59] Body Text | I also wish to thank the entire staff of the Department of Computer Science, Faculty of Computing, Abubakar Tafawa Balewa University, Bauchi, for the knowledge and skills imparted to me throughout my studies.
+[60] Body Text | Finally, I appreciate my family and friends for their moral support, understanding, and encouragement throughout the duration of this project. Without them, this work would not have been possible.
+[61] Normal | 
+[62] Normal | 
+[63] Heading 1 | DEDICATION
+[64] Body Text | This project is dedicated to Almighty God, the source of my strength and wisdom throughout this journey. I also dedicate this work to my parents, for their unwavering love, prayers, and sacrifices in support of my education, and to my siblings and friends, whose encouragement kept me going even when the work felt overwhelming.
+[65] Normal | 
+[66] Heading 1 | ABSTRACT
+[67] Body Text | Small and medium-sized enterprises (SMEs) rarely have the analytics staff or tools needed to forecast sales, so stock, staffing and cash-flow decisions are made by intuition. This project designed and implemented a secure, multitenant, web-based sales forecasting platform that trains a dedicated Random Forest regression model for each registered business from a historical sales CSV upload. The system combines a Next.js frontend, a REST API backend and a relational database with an automated pipeline for data cleaning, calendar and lag feature engineering, model training and recursive forecasting of up to 90 days. The pipeline was run on five representative business datasets and evaluated using MAE, RMSE and R². R² scores ranged from 0.50 to 0.85, with training taking about two seconds per business. The study concludes that accurate, self-service sales forecasting is achievable for SMEs and recommends adding external variables such as promotions and holidays.
+[68] Heading 1 | CONTENTS
+[69] Normal | Page
+[70] Normal | Declaration	ii
+[71] Normal | Certification	iii
+[72] Normal | Acknowledgement	iv
+[73] Normal | Dedication	v
+[74] Normal | Abstract	vi
+[75] Normal | Contents	vii
+[76] Normal | List of Tables	ix
+[77] Normal | List of Figures	x
+[78] Normal | Abbreviations	xi
+[79] Normal | Definitions……………………………………………………………………………………xii
+[80] Normal | CHAPTER ONE: INTRODUCTION	1
+[81] Normal | 1.1	Background of the Study	1
+[82] Normal | 1.2	Statement of the Problem	2
+[83] Normal | 1.3	Aim and Objectives	3
+[84] Normal | 1.4	Significance/Justification of the Study	4
+[85] Normal | 1.5	Scope and Limitation	4
+[86] Normal | 1.5.1	Scope	4
+[87] Normal | 1.5.2	Limitation	5
+[88] Normal | CHAPTER TWO: LITERATURE REVIEW	6
+[89] Normal | 2.1	Introduction	6
+[90] Normal | 2.2	Review of the Project Domain: Sales Forecasting	6
+[91] Normal | 2.3	Review of the Programming Languages, Frameworks and Libraries Used	7
+[92] Normal | 2.4	Review of Machine Learning and Deep Learning Techniques	8
+[93] Normal | 2.4.1	Supervised Learning	8
+[94] Normal | 2.4.2	Unsupervised Learning	8
+[95] Normal | 2.4.3	Reinforcement Learning	9
+[96] Normal | 2.4.4	Ensemble Learning and the Random Forest Algorithm	9
+[97] Normal | 2.4.5	Comparative Overview of Forecasting Approaches	10
+[98] Normal | 2.5	Review of Previous Related Studies	10
+[99] Normal | 2.6	Summary of Literature Review	13
+[100] Normal | CHAPTER THREE: MATERIALS AND METHODS	14
+[101] Normal | 3.1	Introduction	14
+[102] Normal | 3.2	System Design Approach	14
+[103] Normal | 3.2.1	System Architecture	14
+[104] Normal | 3.2.2	Database Design	15
+[105] Normal | 3.3	Technology Stack	17
+[106] Normal | 3.4	Data Collection and Datasets	17
+[107] Normal | 3.5	Data Preprocessing and Feature Engineering	18
+[108] Normal | 3.6	Model Development	19
+[109] Normal | 3.6.1	Algorithm Selection	19
+[110] Normal | 3.6.2	Model Training and Persistence	19
+[111] Normal | 3.6.3	Evaluation Metrics and Train/Test Split	20
+[112] Normal | 3.6.4	Recursive Multi-Step Forecasting	20
+[113] Normal | 3.7	System Implementation Tools	21
+[114] Normal | 3.8	Testing Strategy	21
+[115] Normal | 3.9	Hardware and Software Requirements	22
+[116] Normal | CHAPTER FOUR: RESULTS AND DISCUSSION	23
+[117] Normal | 4.1	Introduction	23
+[118] Normal | 4.2	System Interface and Implementation	23
+[119] Normal | 4.2.1	User Registration and Authentication	23
+[120] Normal | 4.2.2	Business Dashboard	25
+[121] Normal | 4.2.3	Dataset Upload and Validation	25
+[122] Normal | 4.2.4	Forecast Visualization	26
+[123] Normal | 4.2.5	Model Training History	27
+[124] Normal | 4.3	Model Performance Evaluation	28
+[125] Normal | 4.4	Feature Importance Analysis	29
+[126] Normal | 4.5	Discussion of Findings	30
+[127] Normal | 4.6	Comparison with Reviewed Related Studies	31
+[128] Normal | 4.7	Limitations Encountered During Implementation	31
+[129] Normal | CHAPTER FIVE: SUMMARY, CONCLUSION AND RECOMMENDATIONS	32
+[130] Normal | 5.1	Summary	32
+[131] Normal | 5.2	Conclusion	32
+[132] Normal | 5.3	Contribution to Knowledge	33
+[133] Normal | 5.4	Recommendations	33
+[134] Normal | 5.5	Suggestions for Further Work	34
+[135] Normal | REFERENCES	35
+[136] Heading 1 | LIST OF TABLES
+[137] Normal | Table	Page
+[138] Normal | Table 2.1:	Summary of Reviewed Related Studies	12
+[139] Normal | Table 3.1:	Technologies Used at Each Layer of the System	17
+[140] Normal | Table 3.2:	Representative System Test Cases	22
+[141] Normal | Table 4.1:	Comparative Model Performance Across Five Business Domains	28
+[142] Heading 1 | LIST OF FIGURES
+[143] Normal | Figure	Page
+[144] Normal | Figure 3.1:	Three Tier System Architecture	15
+[145] Normal | Figure 3.2:	Entity Relationship Diagram of the Application Database	16
+[146] Normal | Figure 3.3:	Data Preprocessing and Feature Engineering Pipeline	18
+[147] Normal | Figure 3.4:	Recursive 90-Day Forecasting Procedure	21
+[148] Normal | Figure 4.1:	Login page with email and password fields and a sign-in button	24
+[149] Normal | Figure 4.2:	Registration page collecting full name, email and password	24
+[150] Normal | Figure 4.3:	Business owner dashboard listing registered businesses as cards with summary stats	25
+[151] Normal | Figure 4.4:	CSV dataset upload page with drag and drop area and validation preview table	26
+[152] Normal | Figure 4.5:	90-Day sales forecast versus recent historical sales, Café & Bakery sample business (actual system output)	27
+[153] Normal | Figure 4.6:	Model training history page listing past training runs with metrics per run	28
+[154] Normal | Figure 4.7:	Top 10 feature importance, Random Forest model, Apex Fashion Retail sample business (actual system output)	29
+[155] Heading 1 | ABBREVIATIONS, DEFINITIONS, GLOSSARIES AND SYMBOLS
+[156] Normal | Abbreviations
+[157] Normal | AI	Artificial Intelligence
+[158] Normal | API	Application Programming Interface
+[159] Normal | ARIMA	Autoregressive Integrated Moving Average
+[160] Normal | CORS	Cross-Origin Resource Sharing
+[161] Normal | CSV	Comma-Separated Values
+[162] Normal | HTTP	Hypertext Transfer Protocol
+[163] Normal | JSON	JavaScript Object Notation
+[164] Normal | JWT	JSON Web Token
+[165] Normal | LSTM	Long Short-Term Memory
+[166] Normal | MAE	Mean Absolute Error
+[167] Normal | ML	Machine Learning
+[168] Normal | ORM	Object-Relational Mapping
+[169] Normal | REST	Representational State Transfer
+[170] Normal | RMSE	Root Mean Squared Error
+[171] Normal | SaaS	Software as a Service
+[172] Normal | SARIMA	Seasonal Autoregressive Integrated Moving Average
+[173] Normal | SME	Small and Medium-Sized Enterprise
+[174] Normal | SQL	Structured Query Language
+[175] Normal | Symbols
+[176] Normal | R²	Coefficient of determination; the proportion of variance in actual sales explained by the model.
+[177] Normal | ₦	Nigerian Naira; the currency used for all monetary values in this report.
+[178] Normal | 
+[179] Normal | Definitions of Terms
+[180] Normal | Multitenancy: An architecture in which one application instance serves many businesses (tenants) while keeping each tenant’s data, model and predictions isolated.
+[181] Normal | Feature engineering: The process of deriving model inputs, such as calendar, lag and rolling-window features, from raw data.
+[182] Normal | Lag feature: The sales figure recorded a fixed number of days earlier, used as an input for predicting a later day.
+[183] Normal | Random Forest: An ensemble machine learning method that averages the predictions of many decision trees to produce a robust forecast.
+[184] Normal | Recursive forecasting: A multi-step forecasting strategy in which each day’s prediction is fed back as an input for predicting the next day.
+[185] Normal | Held-out test split: The most recent portion of the data, kept unseen during training and used to compute honest evaluation metrics.
+[186] Normal | 
+[187] Heading 1 | CHAPTER ONE
+[188] Heading 1 | INTRODUCTION
+[189] Heading 2 | 1.1 	BACKGROUND OF THE STUDY
+[190] Normal | Every trading business, regardless of size, runs on an implicit forecast of tomorrow's sales. Decisions on how much stock to reorder, how many staff to schedule for a weekend rush, and how much cash to set aside for the coming month are all, in effect, predictions about future demand. For large corporations, these predictions are produced by dedicated data science and business intelligence teams using purpose built forecasting systems. For small and medium sized enterprises (SMEs), however, the same decisions are typically made by intuition, spreadsheet extrapolation, or simple rules of thumb, because dedicated analytics staff and enterprise forecasting software are rarely within reach of a single retail outlet, café, pharmacy or online shop.
+[191] Normal | Machine learning has, over the last decade, made data-driven forecasting considerably more accessible. Ensemble tree-based methods in particular and the Random Forest algorithm (Prabu C. R. et al. (2025)) specifically have repeatedly been shown to produce strong, robust sales predictions from ordinary historical transaction records, without requiring the manual model-tuning that classical statistical methods such as ARIMA often demand (Googerdchi and Jafari, 2025; Deepak, Sathyanarayanan and Arunnehru, 2025). What has lagged behind the modelling research, however, is the delivery of these techniques to the businesses that most need them. Studies of SME forecasting practice consistently report that resource-constrained businesses lack the technical staff to build, validate and maintain their own machine learning pipelines, and call for automated, self-service forecasting tools that hide this complexity behind a usable interface (Yadav, 2023; Gaertner et al., 2024).
+[192] Normal | This project responds directly to that gap. It presents the design and implementation of a multitenant, web-based sales forecasting platform that allows a business owner to register an account, create a profile for their business, upload a plain CSV export of their historical daily sales, and  without writing a single line of code or touching a statistical package  obtain a trained machine learning model specific to their business, together with a 90day forecast, accuracy metrics and an interactive dashboard.
+[193] Normal | The platform is built as a conventional three-tier web application: a Next.js/React/TypeScript frontend, a Python Flask REST API, and a SQLite relational database, with the forecasting logic implemented in Python using pandas, NumPy and scikit-learn. Central to the design is the requirement that each business's dataset, trained model and forecasts be trained independently and remain strictly isolated from every other business on the platform Business A must never be able to see or influence Business B's data or model, even though both are served by the same running application.
+[194] Heading 2 | 1.2 STATEMENT OF THE PROBLEM
+[195] Normal | Small and medium-sized businesses generate sales data every day  through point-of-sale systems, invoice books, or simple spreadsheets  yet very little of that data is turned into a forward-looking forecast that can inform stocking, staffing or cashflow decisions. Three related problems motivate this project.
+[196] Normal | First, manual and rule-of-thumb forecasting (for example, assuming next month will look like last month) ignores trend, weekly seasonality and irregular spikes that are present in almost all retail-style sales data, leading to frequent stockouts or overstocking.
+[197] Normal | Second, where machine learning forecasting does exist, it is typically delivered as a one-off research exercise trained and evaluated on a single dataset, rather than as a reusable system that can safely serve many different, unrelated businesses at once. A platform that pools several businesses' data into one global model risks leaking one business's patterns and even confidential figures into another business's predictions, which is unacceptable in a real commercial setting.
+[198] Normal | Third, existing commercial demand-forecasting and business-intelligence suites are priced, and often designed, for large enterprises with dedicated analytics staff, putting them out of reach of a typical single-location SME the same accessibility gap identified in the SME-forecasting literature (Yadav, 2023).
+[199] Normal | The problem this project addresses can therefore be stated as follows: there is a need for a secure, affordable, self-service web platform that lets an individual small business owner upload nothing more than a historical sales CSV file and receive an accurate, business-specific machine learning sales forecast, while guaranteeing that every business's data, model and predictions remain completely isolated from every other business using the same platform.
+[200] Heading 2 | 1.3 AIM AND OBJECTIVES
+[201] Normal | The aim of this project is to design and implement a secure, multitenant, web-based sales forecasting platform that trains a dedicated Random Forest regression model for each registered business and uses it to generate accurate short-to-medium-term (up to 90day) sales forecasts from a simple historical sales upload.
+[202] Normal | The specific objectives of the project are to:
+[203] Normal | To design a multi-business web platform where businesses can register, upload sales data, and access personalized dashboards.
+[204] Normal | To develop an automated data cleaning and preprocessing pipeline for uploaded business data.
+[205] Normal | To implement a Random Forest Regression model that trains a dedicated prediction model per business.
+[206] Normal | To generate sales forecasts for up to 90 days and display them through interactive charts.
+[207] Normal | To evaluate model performance using MAE, RMSE, and R² metrics.
+[208] Normal | 
+[209] Heading 2 | 1.4 SIGNIFICANCE/JUSTIFICATION OF THE STUDY
+[210] Normal | Academically, the project demonstrates the practical integration of two areas of the Computer Science curriculum that are usually taught separately full-stack web engineering (REST API design, authentication, relational database design, modern frontend development) and applied machine learning (data preprocessing, feature engineering, model evaluation)  into a single coherent, working system, rather than a standalone note-book-based experiment.
+[211] Normal | Practically, the platform is of direct relevance to the large population of small and medium sized enterprises operating in Nigeria and similar economies, for whom dedicated data analytics support is rarely affordable. By requiring nothing more than a CSV export that most point-of-sale and accounting tools already produce, the system removes the two biggest practical barriers to SME adoption of machine learning forecasting identified in the literature: the need for inhouse technical expertise, and the cost of enterprise analytics software (Yadav, 2023; Gaertner et al., 2024).
+[212] Normal | Finally, the project contributes a reusable reference design a validated pattern for building secure, pertenant machine learning pipelines behind a conventional web application that can be extended by future students or developers to other prediction tasks beyond sales forecasting, such as demand planning, cashflow projection or inventory re-order-point estimation.
+[213] Heading 2 | 1.5 SCOPE AND LIMITATION
+[214] Heading 3 | 1.5.1 Scope
+[215] Normal | The system covers univariate daily sales forecasting: a business owner supplies historical records containing, at minimum, a date and a sales/revenue figure, and the platform automatically detects these columns, preprocesses the data, engineers’ calendar and lag-based features, and trains a per business Random Forest Regressor. The scope includes user registration and JWT-based authentication, business profile management, CSV dataset upload and server-side validation, model training and persistence, evaluation metric computation, a recursive 90day forecasting engine with confidence bounds, an interactive analytics dashboard, and a model training history view. The system was developed and evaluated using five representative business datasets spanning food and beverage, electronics/technology, pharmacy/health, retail clothing, and SaaS/ecommerce domains, each covering a two-year daily history, to demonstrate that the pipeline generalizes across business types without domain specific code changes.
+[216] Heading 3 | 1.5.2 Limitation
+[217] Normal | The study is subject to a number of limitations. The forecasting model relies solely on the historical sales series itself calendar and lag-derived features  and does not incorporate exogenous variables such as promotions, public holidays, weather or price changes, which would likely improve accuracy further. The recursive multistep forecasting strategy, by construction, feeds each predicted value back in as an input for the next day's prediction, so forecast uncertainty compounds over the 90day horizon. Only the Random Forest algorithm was implemented and evaluated; a comparative study against classical statistical methods (e.g., ARIMA/SARIMA) or deep-learning sequence models (e.g., LSTM) was outside the scope of the available project time. Finally, due to the difficulty of obtaining verifiable, consent-cleared historical sales records from real Nigerian SMEs within the project timeline, the system was evaluated using carefully constructed representative datasets rather than live production data; the results in Chapter Four should therefore be read as a demonstration of technical feasibility rather than a validated real-world accuracy benchmark.
+[218] Heading 1 | CHAPTER TWO
+[219] Heading 1 | LITERATURE REVIEW
+[220] Heading 2 | 2.1 INTRODUCTION
+[221] Normal | This chapter reviews literature relevant to the design and implementation of the sales-forecasting platform developed in this project. It begins by examining the project domain sales forecasting and its importance to business operations, particularly for small and medium-sized enterprises. It then reviews the programming languages, frameworks and libraries adopted in the implementation, before surveying supervised, unsupervised and reinforcement learning as the three broad categories of machine learning, with particular attention to ensemble methods and the Random Forest algorithm that underpins the system. The chapter concludes with a tabulated review of closely related studies and a summary that identifies the specific gap this project addresses.
+[222] Heading 2 | 2.2 REVIEW OF THE PROJECT DOMAIN: SALES FORECASTING
+[223] Normal | Sales forecasting is the process of estimating future sales using historical data, statistical techniques or machine learning models, and it underlies core business functions such as inventory management, staff scheduling, procurement and cashflow planning. Classical approaches to the problem moving averages, exponential smoothing, and the Autoregressive Integrated Moving Average (ARIMA) family of models treat sales as a univariate time series and rely on the series' own statistical structure (trend, seasonality, autocorrelation) to project future values (Hyndman and Athanasopoulos, 2021).
+[224] Normal | Over the past decade, machine learning approaches particularly ensemble tree-based regressors  have increasingly been applied to the same problem, generally by reframing timeseries forecasting as a supervised regression task: past values and calendar attributes become input features, and the value to be predicted becomes the target. This reframing allows algorithms such as Random Forest to capture nonlinear relationships and interactions between seasonality, trend and recent momentum that classical linear models struggle to represent, and multiple retail case studies report strong results from doing so (Googerdchi and Jafari, 2025; Deepak, Sathyanarayanan and Arunnehru, 2025).
+[225] Normal | For small and medium-sized enterprises specifically, the forecasting literature identifies a persistent accessibility gap: SMEs generate the transactional data needed for forecasting but typically lack the inhouse data-science expertise, computing infrastructure, or budget to build and maintain forecasting pipelines of their own (Yadav, 2023). Gaertner et al. (2024) argue explicitly for automated, low-friction forecasting pipelines tailored to SMEs, in contrast to the bespoke, manually-tuned pipelines built for large retailers with dedicated teams. This project's design a self-service upload-train-forecast workflow requiring no statistical expertise from the user is a direct response to that call.
+[226] Heading 2 | 2.3 	REVIEW OF THE PROGRAMMING LANGUAGES, FRAMEWORKS AND LIBRARIES USED
+[227] Normal | The backend and machine learning components of the system were implemented in Python, chosen for its mature, well-documented data science ecosystem. Pandas and NumPy were used for tabular data manipulation, date handling and numerical computation throughout the preprocessing pipeline, while scikit-learn (Pedregosa et al., 2011) supplied the Random-Forest-Regressor implementation together with the mean_absolute_error, mean_squared_error and r2_score evaluation utilities used to assess every trained model. Trained models were persisted to disk with job-lib, allowing a business's model to be reloaded without retraining every time a dashboard is viewed.
+[228] Normal | The REST API itself was built with Flask, a lightweight Python web framework well suited to a service composed of small, independent blueprints (authentication, business management, dataset upload, and forecasting). Flask CORS was used to permit the separately-hosted frontend to call the API, Flask SQL Alchemy provided an Object-Relational Mapping (ORM) layer over the SQLite database, and JSON Web Tokens (JWT), combined with Werkzeug's password hashing utilities, were used to implement stateless, per user authentication so that every protected route can identify the calling user and verify their ownership of the requested business resource.
+[229] Normal | The frontend was implemented with Next.js and React, using TypeScript for static type safety and Tailwind CSS for utility first styling. Next.js was chosen for its file system based routing (used here to organize the login, register, upload, forecast and history pages) and its strong developer ergonomics, while Re-charts  a charting library built on top of React and D3  was used to render the historical versus forecast sales charts and feature importance visualizations on the analytics dashboard.
+[230] Heading 2 | 2.4 REVIEW OF MACHINE LEARNING AND DEEP LEARNING TECHNIQUES
+[231] Heading 3 | 2.4.1 Supervised Learning
+[232] Normal | Supervised learning algorithms learn a mapping from labelled input features to a known target value using a training dataset of input-output pairs, and are broadly divided into classification (discrete targets) and regression (continuous targets) problems. Framing the forecasting task as predicting a continuous daily sales figure from engineered calendar and lag features, as described in Chapter Three, makes this project a supervised regression problem, and the Random Forest Regressor used throughout is a supervised learning algorithm.
+[233] Heading 3 | 2.4.2 Unsupervised Learning
+[234] Normal | Unsupervised learning algorithms, by contrast, operate on un-labelled data and seek to discover structure clusters, associations, or lower-dimensional representations  without a target variable to predict. While unsupervised techniques such as customer or product-sales clustering are commonly used elsewhere in retail analytics, they are not directly employed in this project's forecasting pipeline, which is concerned with a single labelled prediction task per business.
+[235] Normal | 
+[236] Normal | 
+[237] Heading 3 | 2.4.3 Reinforcement Learning
+[238] Normal | Reinforcement learning involves an agent that learns to take sequential actions within an environment so as to maximize a cumulative reward signal, typically through trial and error interaction rather than a fixed labelled dataset. This paradigm is more naturally suited to problems such as dynamic pricing or inventory reorder policy optimization than to the batch, historical data driven sales forecasting addressed here, and was therefore not applicable to this project, though it is noted in Chapter Five as a possible direction for future work (e.g., using forecasts to drive an automated reorder policy agent).
+[239] Heading 3 | 2.4.4 Ensemble Learning and the Random Forest Algorithm
+[240] Normal | Ensemble learning combines the predictions of many individual models to produce a result that is typically more accurate and stable than any single constituent model. Bagging (Bootstrap Aggregating) is one such ensemble strategy: many base models are each trained on a randomly resampled subset of the training data, and their predictions are averaged (for regression) or voted (for classification). The Random Forest algorithm, introduced by Prabu C. R. et al. (2025), extends bagging specifically for decision trees by additionally randomizing the subset of features considered at each split, which decorrelates the individual trees and further reduces the variance of the averaged prediction without materially increasing bias.
+[241] Normal | Random Forest regressors are attractive for a self-service SME forecasting platform for several practical reasons beyond raw accuracy. They require comparatively little hyperparameter tuning to produce reasonable results; they are robust to the noisy, occasionally inconsistent data typical of small business recordkeeping; they train quickly on the modest dataset sizes typical of a single business's sales history (seconds rather than hours); and, critically for a nontechnical end user, they naturally expose a feature importance ranking that can be surfaced on the dashboard to explain, in plain terms, which factors most influence the forecast. Their main limitation is a reduced ability to extrapolate cleanly beyond the range of values seen during training a consideration discussed further in Chapters Three and Four.
+[242] Heading 3 | 2.4.5 Comparative Overview of Forecasting Approaches
+[243] Normal | The forecasting literature broadly contrasts three families of technique: classical statistical models (exponential smoothing, ARIMA/SARIMA), tree-based ensemble machine learning models (Random Forest, gradient boosted trees), and deep learning sequence models (recurrent networks such as LSTM, or specialized libraries such as Prophet). Comparative studies do not converge on a single universally superior method results depend heavily on dataset size, seasonality strength and available exogenous features, with some studies reporting deep learning approaches outperforming Random Forest in specific food retail contexts, and others finding tree ensembles superior on structured, tabular retail data (Yadav, 2023). Given this project's requirement that the pipeline work well with limited historical data (a single small business's history, sometimes only a year or two), require no manual model order selection as classical ARIMA does, and remain cheap enough to retrain synchronously within an HTTP request, the Random Forest Regressor was selected as the most pragmatic choice, consistent with its repeated success in the retail sales-forecasting case studies reviewed in Section 2.5.
+[244] Heading 2 | 2.5 REVIEW OF PREVIOUS RELATED STUDIES
+[245] Normal | Table 2.1 summarizes the studies most directly relevant to this project's design and evaluation, covering the foundational Random Forest algorithm, applied retail and SME sales forecasting case studies, the classical forecasting evaluation conventions adopted, and the software library used for implementation.
+[246] Normal | 
+[247] Normal | Table 2.1: Summary of Reviewed Related Studies
+[248] Normal | 
+[249] Normal | 
+[250] Heading 2 | 2.6 SUMMARY OF LITERATURE REVIEW
+[251] Normal | The literature confirms that Random Forest regression is a well validated, repeatedly successful approach to sales forecasting, with reported accuracy as high as R² = 0.974 on large, richly featured retail datasets (Googerdchi and Jafari, 2025) and consistent gains over simple linear baselines (Deepak, Sathyanarayanan and Arunnehru, 2025). At the same time, the SME focused literature (Yadav, 2023; Gaertner et al., 2024) makes clear that the harder unsolved problem for small businesses is not model accuracy in isolation, but accessibility: delivering that modelling capability through an automated, low friction system that a nontechnical business owner can actually use. The great majority of the reviewed Random Forest sales forecasting studies evaluate a single trained model against a single, already curated dataset; comparatively few package the full pipeline data validation, preprocessing, training, evaluation and forecasting behind a secure, multitenant, self-service web application capable of serving many independent businesses safely from one deployment. This is precisely the gap that the system described in Chapters Three and Four is designed to close.
+[252] Heading 1 | CHAPTER THREE
+[253] Heading 1 | MATERIALS AND METHODS
+[254] Heading 2 | 3.1 INTRODUCTION
+[255] Normal | This chapter describes how the sales forecasting platform was designed and built. It presents the overall system design approach, the three tier architecture and relational database design, the technology stack, the datasets used for development and evaluation, the data preprocessing and feature engineering pipeline, the machine learning model development process, the tools used during implementation, and the strategy used to test the completed system.
+[256] Heading 2 | 3.2 SYSTEM DESIGN APPROACH
+[257] Normal | The system was built using an incremental, feature-by-feature development approach: authentication was implemented and tested first, followed by business profile management, dataset upload and validation, the machine learning engine, and finally the analytics dashboard, with each layer exercised through Postman and the browser before the next was started. Within the machine learning component specifically, a CRISPDM style process (business understanding, data understanding, data preparation, modelling, evaluation) is followed automatically, in code, every time a business owner triggers training: the /train endpoint performs preprocessing, feature engineering, model fitting and metric evaluation as a single automated sequence, rather than as a manual, one off analyst workflow.
+[258] Heading 3 | 3.2.1 System Architecture
+[259] Normal | The platform follows a conventional three tier architecture, illustrated in Figure 3.1. The presentation tier is a Next.js/React single page application through which a business owner logs in, manages business profiles, uploads sales data, and views forecasts. The application tier is a Flask REST API organized into four blueprints authentication, business management, sales/upload, and forecasting which together perform request validation, JWT verification, data preprocessing, feature engineering and model orchestration. The data tier consists of a SQLite relational database (user, business, dataset, metric and prediction records) and a file storage area holding the raw uploaded CSV files and the persisted joblib model files, one per business.
+[260] Normal | 
+[261] Normal | Figure 3.1: Three Tier System Architecture
+[262] Normal | Multitenant isolation, one of the project's core objectives, is enforced at the application tier rather than left to the database alone: every protected route first resolves the authenticated user from the JWT bearer token, and then filters or authorizes the requested business, dataset or model strictly by that user's ownership (business_id together with user_id), rejecting any request for a resource the caller does not own with an HTTP 404 response rather than revealing that the resource exists under another account.
+[263] Heading 3 | 3.2.2 Database Design
+[264] Normal | Figure 3.2 shows the entity relationship diagram of the application's relational schema. A Users table stores account credentials (with passwords stored only as salted hashes, never in plain text) and an is_admin flag used to gate business profile creation. Each User owns zero or more Businesses; each Business owns a history of Sales Dataset uploads (only one of which is marked active at a time), a history of Model Metric records (one per training run, storing MAE, RMSE, R², training duration and a JSON encoded feature importance map), and a set of Forecast Prediction rows produced by the most recent training run. Foreign keys cascade on delete, so removing a business also removes its datasets, metrics and forecasts, keeping the database consistent.
+[265] Normal | 
+[266] Normal | Figure 3.2: Entity Relationship Diagram of the Application Database
+[267] Heading 2 | 
+[268] Heading 2 | 
+[269] Heading 2 | 
+[270] Heading 2 | 
+[271] Heading 2 | 
+[272] Heading 2 | 3.3 TECHNOLOGY STACK
+[273] Normal | Table 3.1 summarizes the technologies used at each layer of the system and the specific role each plays.
+[274] Normal | Table 3.1: Technologies Used at Each Layer of the System
+[275] Heading 2 | 3.4 DATA COLLECTION AND DATASETS
+[276] Normal | Because access to verified, consent cleared historical sales records from real Nigerian SMEs could not be secured within the project timeline, the system was developed and evaluated using five representative daily sales datasets, each covering a two year period (1 January 2024 to 31 December 2025, 731 records), spanning five distinct business domains: a café and bakery (food and beverage), an electronics/technology retailer, a pharmacy and health products outlet, a retail clothing store, and a SaaS/ecommerce subscription business. Each dataset contains, at minimum, a date column and a sales/revenue column (several also include a supporting customer count column), constructed to exhibit realistic weekly seasonality, gradual trend and business appropriate volatility, so that the datasets stand in for genuine point of sale or accounting exports a business owner might upload in practice.
+[277] Normal | Critically, no part of the preprocessing or modelling pipeline is hardcoded to any one of these five datasets or domains: the column detection logic described in Section 3.5 automatically identifies the date and sales columns of whatever CSV file is uploaded, which is what allows the same, unmodified pipeline to be evaluated across five unrelated business types in Chapter Four.
+[278] Heading 2 | 3.5 DATA PREPROCESSING AND FEATURE ENGINEERING
+[279] Normal | Every uploaded CSV first passes through a validation step that rejects files with fewer than ten rows, files in which no date like or numeric sales like column can be identified, and files in which more than 30% of the values in either detected column fail to parse. Column detection first checks a list of common date and sales column names (for example date, timestamp, sales, revenue, amount); if no match is found, it falls back to testing each column for date parseability or, for the sales column, selecting the first purely numeric column.
+[280] Normal | Once validated, the data is preprocessed: the date column is parsed and any un-parseable rows dropped, the sales column is coerced to numeric, the data is sorted chronologically and aggregated to a single total per calendar day, and any missing calendar days are re-indexed and filled by forward then backward filling, producing a complete, gap free daily series. Figure 3.3 summarizes this pipeline end-to-end.
+[281] Normal | 
+[282] Normal | Figure 3.3: Data Preprocessing and Feature Engineering Pipeline
+[283] Normal | From this clean daily series, a feature engineering step derives the inputs the Random Forest model is trained on: calendar features (day of week, day of month, month, year, day of year, quarter, and a weekend flag), lag features at 1, 2, 7, 14 and 30 days (i.e., the actual sales figure recorded that many days earlier), and rolling window statistics  the mean and standard deviation of the previous 7 and 30 days  each shifted forward by one day to ensure no feature is computed using information from the day being predicted (avoiding data leakage). An abbreviated illustration of the lag and rolling feature logic, taken from the project's ML_Engine module, is shown below.
+[284] Normal | 
+[285] Heading 2 | 3.6 MODEL DEVELOPMENT
+[286] Heading 3 | 3.6.1 Algorithm Selection
+[287] Normal | As justified in Section 2.4.5, a Random Forest Regressor was selected as the sole forecasting algorithm, configured with 100 estimators (n_estimators = 100), a maximum tree depth of 12 (max_depth = 12), and a fixed random_state = 42 for reproducibility. This configuration balances predictive power against the need to retrain, from scratch, on demand within a single web request full training on a two year daily history (731 rows) completed in approximately two seconds during testing, well within an acceptable synchronous HTTP response time.
+[288] Heading 3 | 3.6.2 Model Training and Persistence
+[289] Normal | Two models are fitted for every training run: one on a chronological training split, used purely to compute honest, held out evaluation metrics; and a second, final model trained on the entire available history, which is the model actually persisted to disk (via job lib) and used to generate forecasts. This is standard practice it allows the model deployed for forecasting to benefit from the maximum amount of historical data, while still reporting metrics computed on data the evaluation model never saw during its own training.
+[290] Heading 3 | 3.6.3 Evaluation Metrics and Train/Test Split
+[291] Normal | Because sales data is a time series, the train/test split is chronological rather than random: the most recent 20% of the daily history (or a minimum of five days, whichever is larger) is held out as the test set, and the model is trained only on the days preceding it, so that no future information leaks into training. Three standard regression metrics are then computed on the held out test set: Mean Absolute Error (MAE), the average absolute difference between predicted and actual sales; Root Mean Squared Error (RMSE), which penalizes larger errors more heavily; and the coefficient of determination (R²), which measures the proportion of variance in actual sales explained by the model, with 1.0 representing a perfect fit. These are the same evaluation conventions used throughout the forecasting literature reviewed in Chapter Two (Hyndman and Athanasopoulos, 2021).
+[292] Heading 3 | 3.6.4 Recursive Multi-Step Forecasting
+[293] Normal | Sales for the 90 days following the end of the uploaded history are generated recursively, one day at a time, as shown in Figure 3.4. For each day in turn, the pipeline rebuilds the calendar, lag and rolling features using all history available up to that point (including previously forecast days), asks the persisted model for a prediction, clips the result at zero (sales cannot be negative), computes an approximate 95% prediction interval as ±1.96 standard deviations of the training residuals  widened by up to 30% at the far end of the horizon to reflect growing uncertainty further into the future  and then appends the predicted value back into the working history so that it can feed the lag features of subsequent days.
+[294] Normal | 
+[295] Normal | Figure 3.4: Recursive 90-Day Forecasting Procedure
+[296] Heading 2 | 3.7 SYSTEM IMPLEMENTATION TOOLS
+[297] Normal | Development used Visual Studio Code as the primary editor, Git and GitHub for version control, Postman for manual and scripted testing of every REST endpoint, the SQLite commandline shell and a database browser for inspecting stored records, Node.js and npm for the frontend build tooling, and a Python virtual environment to isolate backend dependencies (listed in requirements.txt) from the host system.
+[298] Heading 2 | 3.8 TESTING STRATEGY
+[299] Normal | The completed system was tested at three levels. Unit level checks were carried out on the core preprocessing and feature engineering functions (column detection, missing value handling, lag/rolling feature computation) using the five sample datasets and deliberately malformed CSV files. Integration testing exercised each Flask endpoint directly through Postman, covering both successful and error paths (invalid credentials, missing files, unauthorized access). Manual black-box testing was then performed through the browser interface itself, walking through the full registration → upload → train → forecast → dashboard flow for each of the five sample businesses. Table 3.2 lists a representative subset of the test cases exercised, including the tests used to confirm the multitenant data isolation guarantee central to the project's objectives.
+[300] Normal | 
+[301] Normal | Table 3.2: Representative System Test Cases
+[302] Heading 2 | 3.9 HARDWARE AND SOFTWARE REQUIREMENTS
+[303] Normal | Development and testing were carried out on a standard personal computer (a minimum of 4 GB RAM and a dual-core processor is sufficient) running Node.js 18 or later, Python 3.10 or later, and a modern web browser. No specialized hardware (such as a GPU) is required, since the Random Forest models used are lightweight enough to train on CPU alone within a few seconds.
+[304] Heading 1 | CHAPTER FOUR
+[305] Heading 1 | RESULTS AND DISCUSSION
+[306] Heading 2 | 4.1 INTRODUCTION
+[307] Normal | This chapter presents the completed system's interface, the results obtained from training and evaluating the Random Forest forecasting model across all five sample business datasets, and a discussion of those results in light of the literature reviewed in Chapter Two. Screenshots of the running application are included as figures throughout; each is a placeholder mockup of the corresponding page layout, to be replaced with an actual screenshot of the deployed system before final submission, as indicated in each figure's caption.
+[308] Heading 2 | 4.2 SYSTEM INTERFACE AND IMPLEMENTATION
+[309] Heading 3 | 4.2.1 User Registration and Authentication
+[310] Normal | Figures 4.1 and 4.2 show the login and registration pages respectively. On registration, the backend hashes the supplied password with Werkzeug's saltedhash utilities before storing it, and immediately issues a JWT so the new user is logged in without a separate login step; on login, the same credentials are checked against the stored hash and a fresh token issued. Every subsequent request from the frontend attaches this token as a bearer credential, which the backend verifies on every protected route before identifying which user, and therefore which businesses, the request is permitted to touch.
+[311] Normal | 
+[312] Normal | Figure 4.1: Login page with email and password fields and a sign-in button.
+[313] Normal | 
+[314] Normal | Figure 4.2: Registration page collecting full name, email and password.
+[315] Heading 3 | 
+[316] Heading 3 | 
+[317] Heading 3 | 4.2.2 Business Dashboard
+[318] Normal | Figure 4.3 shows the landing dashboard a business owner sees after logging in, listing every business they own as a card summarizing its industry, latest model accuracy (MAE and R²) and dataset status, with a link through to that business's forecast dashboard. Consistent with the access control design described in Section 3.2.1, creation of new business profiles is restricted to administrator accounts, reflecting a deliberate decision to have business onboarding handled centrally rather than opened to self-service signup in this version of the system.
+[319] Normal | 
+[320] Normal | Figure 4.3: Business owner dashboard listing registered businesses as cards with summary stats.
+[321] Heading 3 | 4.2.3 Dataset Upload and Validation
+[322] Normal | Figure 4.4 shows the CSV upload page. A business owner selects or drags in a CSV export; the file is sent to the backend, validated as described in Section 3.5, and if accepted  a preview of the detected date and sales columns, together with the first rows of data, is displayed immediately so the owner can confirm the correct columns were identified before proceeding to train a model. Files that fail validation (too few rows, no recognizable date or sales column, or too many unparseable values) are rejected with a specific, human readable error message rather than a generic failure.
+[323] Normal | 
+[324] Normal | Figure 4.4: CSV dataset upload page with drag and drop area and validation preview table.
+[325] Heading 3 | 4.2.4 Forecast Visualization
+[326] Normal | Figure 4.5 is a genuine output of the system's forecasting engine, produced by running the actual ml_engine training and forecasting code against the Café & Bakery sample dataset. It plots the final months of historical daily sales alongside the resulting 90day forecast and its shaded 95% prediction interval. The pronounced, repeating sawtooth pattern visible in both the historical and forecast series reflects the strong weekly seasonality present in the underlying data a pattern the model has evidently learned to reproduce, as discussed further in Section 4.4.
+[327] Normal | 
+[328] Normal | Figure 4.5: 90-Day sales forecast versus recent historical sales, Café & Bakery sample business (actual system output).
+[329] Heading 3 | 4.2.5 Model Training History
+[330] Normal | Figure 4.7 [shown in Section 4.4 below] presents the feature importance output of the trained model, while Figure 4.6 illustrates the model training history page, through which a business owner can review previous training runs for their business the dataset size used, the resulting MAE, RMSE and R², and how long training took making it possible to see whether accuracy improves as more historical data accumulates over time.
+[331] Normal | 
+[332] Normal | Figure 4.6: Model training history page listing past training runs with metrics per run.
+[333] Heading 2 | 4.3 MODEL PERFORMANCE EVALUATION
+[334] Normal | The complete training and forecasting pipeline were executed, unmodified, against all five sample business datasets. Table 4.1 reports the resulting evaluation metrics, computed on each business's chronological held-out test split, together with the wall-clock training time observed.
+[335] Normal | Table 4.1: Comparative Model Performance Across Five Business Domains
+[336] Normal | Model accuracy, as measured by R², ranged from 0.50 for the SaaS/ecommerce dataset to 0.85 for the Café & Bakery dataset, with every one of the five models training in roughly two seconds regardless of business domain. This consistent, sub-three-second training time across all five unrelated domains is itself an important result: it confirms that synchronous, on-demand retraining within a single HTTP request rather than a background job queue  is a practically viable design for a platform of this scale, directly supporting Objective 5 and Objective 6 stated in Chapter One.
+[337] Heading 2 | 4.4 FEATURE IMPORTANCE ANALYSIS
+[338] Normal | Figure 4.7 shows the ten most important features of the Random Forest model trained on the Café & Bakery dataset, ranked by scikitlearn's built-in feature importance measure. The seven day lag feature (lag_7 sales recorded exactly one week earlier) alone accounts for roughly 70% of the model's total importance, with the fourteen day lag (lag_14) contributing a further 26%; every calendar feature (day of week, month, quarter, and so on) and every rolling window statistic together account for less than 4% combined.
+[339] Normal | 
+[340] Normal | Figure 4.7: Top 10 feature importance, Random Forest model.
+[341] Normal | This result is consistent, business interpretable, and directly actionable: it confirms that the dominant driver of this business's daily sales is its own weekly rhythm  the same day of the previous one or two weeks  rather than broader calendar effects such as the month or quarter of the year. Surfacing this ranking on the dashboard gives a nontechnical business owner a plain language explanation of why the model forecasts what it does, which is precisely the interpretability advantage of Random Forest discussed in Section 2.4.4.
+[342] Heading 2 | 4.5 DISCUSSION OF FINDINGS
+[343] Normal | Taken together, the results in Sections 4.3 and 4.4 show that the objectives set out in Chapter One were met: a single, unmodified pipeline was able to validate, preprocess, train on, evaluate and forecast from five structurally different business datasets without any per domain code changes, confirming that the automatic column detection and feature engineering design (Objective 4) is genuinely domain agnostic. The multitenant isolation objective (Objective 2) was verified directly through test case TC06 in Table 3.2, which confirmed that one user's authenticated session cannot retrieve another user's business, dataset or forecast records. The recursive forecasting mechanism (Objective 6) produced plausible, seasonality respecting 90day forecasts for every business tested, visible in the repeating weekly pattern of Figure 4.5.
+[344] Normal | The spread of R² scores in Table 4.1 is itself an informative finding rather than a weakness to be explained away: it demonstrates that model quality is being driven by genuine differences in the predictability of each business's underlying sales pattern, not by a flaw specific to one dataset. Businesses with strong, regular weekly cycles (Café & Bakery, Pharmacy & Health) were forecast substantially more accurately than businesses with more volatile, promotion or campaign driven sales patterns (SaaS/Ecommerce), exactly as would be expected of a model that leans so heavily on lagged same day of week sales, as shown in Figure 4.7.
+[345] Normal | 
+[346] Heading 2 | 4.6 COMPARISON WITH REVIEWED RELATED STUDIES
+[347] Normal | The R² scores obtained in this project (0.50 to 0.85) are respectable but noticeably lower than the R² = 0.974 reported by Googerdchi and Jafari (2025) for their Walmart Random Forest case study. This gap is attributable to a deliberate design tradeoff rather than a modelling shortcoming: the Walmart study drew on a large, multistore retail chain's curated dataset enriched with external regressors (store type, promotional markdown events, macroeconomic indicators) selected through Recursive Feature Elimination, whereas this project's pipeline was intentionally restricted to only the date and sales figures an ordinary SME owner could export unaided, with zero manual data-preparation burden placed on the user. This mirrors the tradeoff explicitly discussed by Gaertner et al. (2024) and Yadav (2023): SME-oriented forecasting tools sacrifice some of the ceiling accuracy achievable with rich, curated enterprise data in exchange for the low-friction accessibility that makes the tool usable by businesses without a data team in the first place  precisely the gap this project set out to close in Section 2.6.
+[348] Heading 2 | 4.7 LIMITATIONS ENCOUNTERED DURING IMPLEMENTATION
+[349] Normal | A number of practical limitations were observed while implementing and testing the system. The recursive forecasting strategy visibly compounds uncertainty over longer horizons, seen in the widening confidence band toward the end of the 90day forecast in Figure 4.5. The evaluation in this chapter was performed on carefully constructed representative datasets rather than live SME data, for the reasons explained in Section 1.5.2, so the reported metrics should be read as a demonstration of technical feasibility rather than a field-validated accuracy benchmark. Only a single algorithm (Random Forest) was implemented, so no head-to-head comparison against ARIMA/SARIMA or deep-learning alternatives was possible within the available project time. Finally, SQLite, while entirely adequate for development and for the scale tested, is not designed for the high level of concurrent write traffic a production deployment serving many simultaneous businesses would eventually require.
+[350] Heading 1 | CHAPTER FIVE
+[351] Heading 1 | SUMMARY, CONCLUSION AND RECOMMENDATIONS
+[352] Heading 2 | 5.1 SUMMARY
+[353] Normal | This project set out to design and implement a secure, multitenant, web-based sales forecasting platform capable of training a dedicated Random Forest regression model for each registered business from nothing more than a historical sales CSV upload. Chapter One established the background, problem statement, aim, objectives, significance and scope of the work. Chapter Two reviewed the literature on sales forecasting, ensemble machine learning and SME-oriented forecasting tools, and identified a gap between the strong accuracy reported for Random Forest sales forecasting on large, curated retail datasets and the accessible, self-service delivery called for by the SME forecasting literature. Chapter Three described the three-tier system architecture, relational database design, technology stack, data preprocessing and feature engineering pipeline, model development process and testing strategy used to build the platform. Chapter Four presented the completed system's interface and the results of running the full pipeline, unmodified, against five representative business datasets, achieving R² scores between 0.50 and 0.85 with training completing in roughly two seconds per business, and discussed those results against the reviewed literature.
+[354] Heading 2 | 5.2 CONCLUSION
+[355] Normal | The objectives set out in Chapter One were achieved. The completed system demonstrates that a lightweight, interpretable, pertenant Random Forest pipeline can generate useful 90day sales forecasts with accuracy up to R² = 0.85 on business types exhibiting regular weekly sales cycles  directly from a plain historical sales CSV, at a training cost of only a few seconds per business, while maintaining strict data isolation between the businesses sharing the platform. The project confirms that the accessibility gap identified in the SME-forecasting literature can be meaningfully narrowed with conventional, well-understood web-engineering techniques (JWT authentication, pertenant authorization checks, a REST API) combined with a deliberately simple, low-friction machine learning pipeline, without requiring the business owner to possess any data science expertise.
+[356] Heading 2 | 5.3 CONTRIBUTION TO KNOWLEDGE
+[357] Normal | The project contributes a practical, reproducible reference architecture for combining multitenant SaaS design principles with an automated, self-service machine learning pipeline for the specific use case of small business sales forecasting in a Nigerian/African context. It further demonstrates, through the comparative results in Table 4.1, that a modest, quick-to-train Random Forest model  rather than a heavier deep-learning approach  is a practically sufficient and appropriately scaled choice for a forecasting tool that must retrain synchronously, on demand, for many independent small businesses.
+[358] Heading 2 | 5.4 RECOMMENDATIONS
+[359] Normal | Arising from the findings and limitations discussed in Chapter Four, the following recommendations are made for extending and hardening the system before any production deployment:
+[360] List Paragraph | Incorporate exogenous variables promotions, public holidays, weather, and pricing changes into the feature set, particularly for volatile domains such as SaaS/ecommerce, where the current lag only feature set explains the least variance.
+[361] List Paragraph | Introduce automated comparison between several candidate algorithms (for example, ARIMA/SARIMA, gradient-boosted trees, or Prophet) and select the best performer per business, in the spirit of the automated model-selection approach described by Gaertner et al. (2024).
+[362] List Paragraph | Move model training onto an asynchronous background job queue (such as Celery) as the number of tenants grows, rather than executing training synchronously within the HTTP request/response cycle.
+[363] List Paragraph | Migrate the database from SQLite to a production grade relational database management system, such as PostgreSQL, to support the concurrent read/write load of many simultaneous businesses.
+[364] List Paragraph | Extend the current admin gated business creation policy with finer-grained role-based access control and an audit log covering business creation, deletion and data access events.
+[365] Heading 2 | 5.5 SUGGESTIONS FOR FURTHER WORK
+[366] Normal | Future work building on this project could extend the platform to multilocation or multioutlet businesses, where forecasts must be produced both per location and in aggregate; add inventory reorder point and reorder quantity recommendations derived directly from the forecast and its confidence bounds; develop a companion mobile application so business owners can review forecasts and alerts away from a desktop browser; and build an explanation layer that translates the raw feature importance output shown in Figure 4.7 into plain language operational advice (for example, explicitly flagging that a business's sales are most strongly tied to the same day in the previous one to two weeks, and suggesting corresponding staffing or stocking adjustments).
+[367] Heading 1 | REFERENCES
+[368] Normal | Wolter, F., Prieß, J., Rösler, V., Rokoss, A. and Stamer, F. (2026). Machine Learning for Sales Forecasting in Industrial Environments: A Systematic Literature Review of Input Factors and Applied Methods. Springer.
+[369] Normal | 
+[370] Normal | Prabu C. R. et al. (2025). Comprehensive Review on Sales Prediction Models. Procedia Computer Science, 259, pp 1218–1227.
+[371] Normal | 
+[372] Normal | Sharma, A., Parush, A., Wadhwa, S., Savir, A., Guinard, A. and Srivastava, P. (2025). Dynamic Lagging for Time-Series Forecasting in E-Commerce Finance: Mitigating Information Loss with a Hybrid ML Architecture. arXiv:2509.20244.
+[373] Normal | 
+[374] Normal | Zanotti, M. (2025). On the Retraining Frequency of Global Forecasting Models. arXiv:2505.00356. (directly supports your Ch.5 recommendation on scheduled retraining)Deepak, R., Sathyanarayanan,
+[375] Normal | R. and Arunnehru, J. (2025). Demand and Sales Forecasting Using Random Forest and Linear Regression. In: Simic, M., Bhateja, V., Azar, A. T. and Lydia, E. L., eds. Smart Computing Paradigms: Advanced Data Mining and Analytics. Lecture Notes in Networks and Systems, vol. 1262. Singapore: Springer.
+[376] Normal | Gaertner, T. et al. (2024). Automated Demand Forecasting in Small to MediumSized Enterprises. arXiv preprint arXiv:2412.20420.
+[377] Normal | Googerdchi, K. F. et al. (2025). Sales Forecasting in Retail Using Random Forest Regression: A Case Study on Walmart. IEEE Conference Publication.
+[378] Normal | Hyndman, R. J. and Athanasopoulos, G. (2021). Forecasting: Principles and Practice. 3rd ed. Melbourne, Australia: OTexts.
+[379] Normal | Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J., Passos, A., Cournapeau, D., Brucher, M., Perrot, M. and Duchesnay, E. (2011). Scikitlearn: Machine Learning in Python. Journal of Machine Learning Research, 12, pp 2825–2830.
+[380] Normal | Yadav, S. S. (2023). Sales Forecasting for Small Medium Enterprises Using Machine Learning. Master's thesis, National College of Ireland, Dublin.
+[381] Normal | OWASP (2023). OWASP API Security Top 10 – 2023. OWASP Foundation.
+[382] Normal | Maathuis et al. (2026). Designing Effective Explainable AI: A Human-Centered Evaluation of Explanation Formats in Financial Decision-Making. [PMC].
+[383] Normal | OECD (2025). AI Adoption by Small and Medium-Sized Enterprises: OECD Discussion Paper for the G7. OECD Publishing, Paris.
+[384] Normal | 
+[385] Normal | Yesuf, Y., Fields, Z., Jain, A. and Kassa, E. (2025). Artificial Intelligence Adoption as a Driver of Innovation and Competitiveness in SMEs: A Bibliometric and Systematic Review. F1000Research.
