@@ -10,7 +10,7 @@ start "Backend Flask Server" cmd /k "cd /d %~dp0backend && .venv\Scripts\python.
 
 echo.
 echo 2. Launching Next.js Frontend App on http://localhost:3000 ...
-start "Frontend Next.js App" cmd /k "cd /d %~dp0frontend && npm run dev"
+start "Frontend Next.js App" cmd /k "cd /d %~dp0 && npm run dev"
 
 echo.
 echo ===================================================

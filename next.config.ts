@@ -1,0 +1,23 @@
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination:
+          process.env.NODE_ENV === 'development'
+            ? 'http://127.0.0.1:5000/api/:path*'
+            : '/api/index.py',
+      },
+    ];
+  },
+};
+
+export default nextConfig;

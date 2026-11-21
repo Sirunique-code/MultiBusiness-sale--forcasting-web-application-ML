@@ -142,6 +142,8 @@ export default function AdminPage() {
       description: b.description,
       user_id: b.owner ? b.owner.id : 0,
       created_at: b.created_at || '',
+      datasets_count: b.datasets_count || 0,
+      has_active_model: !!b.model_evaluation,
     });
     router.push('/');
   };
