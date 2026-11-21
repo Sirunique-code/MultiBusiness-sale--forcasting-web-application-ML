@@ -1,15 +1,10 @@
 import os
 import sys
 
-# Ensure root and backend directories are in Python path
-API_DIR = os.path.dirname(os.path.abspath(__file__))
-ROOT_DIR = os.path.dirname(API_DIR)
-BACKEND_DIR = os.path.join(ROOT_DIR, 'backend')
-
-if ROOT_DIR not in sys.path:
-    sys.path.insert(0, ROOT_DIR)
-if BACKEND_DIR not in sys.path:
-    sys.path.insert(0, BACKEND_DIR)
+# Ensure api directory is on Python path
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+if CURRENT_DIR not in sys.path:
+    sys.path.insert(0, CURRENT_DIR)
 
 from app import create_app
 
@@ -23,10 +18,11 @@ class VercelPathFixerMiddleware:
     def __call__(self, environ, start_response):
         path_info = environ.get('PATH_INFO', '')
 
-        # When Vercel rewrites to /api/index.py, recover the original request path
-        if path_info in ('/api/index', '/api/index.py', '/api', '/api/'):
+        # When Next.js rewrites to /api/, recover the original requested path
+        if path_info in ('/api/index', '/api/index.py', '/api', '/api/', '/'):
             forwarded = (
                 environ.get('HTTP_X_FORWARDED_PATH') or
+                environ.get('HTTP_X_FORWARDED_URI') or
                 environ.get('RAW_URI') or
                 environ.get('REQUEST_URI', '')
             )
