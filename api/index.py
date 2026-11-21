@@ -18,8 +18,8 @@ class VercelPathFixerMiddleware:
     def __call__(self, environ, start_response):
         path_info = environ.get('PATH_INFO', '')
 
-        # When Next.js rewrites to /api/, recover the original requested path
-        if path_info in ('/api/index', '/api/index.py', '/api', '/api/', '/'):
+        # When invoked on Vercel, if path_info is the function name, recover original path
+        if path_info in ('/api/index', '/api/index.py'):
             forwarded = (
                 environ.get('HTTP_X_FORWARDED_PATH') or
                 environ.get('HTTP_X_FORWARDED_URI') or

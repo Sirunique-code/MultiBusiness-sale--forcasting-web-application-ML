@@ -28,6 +28,15 @@ def create_app(config_class=Config):
     app.register_blueprint(forecast_bp, url_prefix='/api/businesses')
     app.register_blueprint(admin_bp, url_prefix='/api/admin')
 
+    @app.route('/api', methods=['GET'])
+    @app.route('/api/', methods=['GET'])
+    def api_root():
+        return jsonify({
+            'status': 'online',
+            'message': 'Multi-Business Sales Forecasting API is active.',
+            'version': '1.0.0'
+        }), 200
+
     @app.route('/api/health', methods=['GET'])
     def health_check():
         return jsonify({
